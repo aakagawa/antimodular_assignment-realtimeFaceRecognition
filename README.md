@@ -1,4 +1,4 @@
-# Realtime Face Detection js
+# Realtime Face Recognition js
 
 ### Project 
 Face Recognition 
