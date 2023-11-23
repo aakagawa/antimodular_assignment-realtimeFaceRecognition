@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Face Recognition App</title>
+        <script type="module" src="./node_modules/@tensorflow/tfjs-core/dist/tf-core.min.js"></script> 
+        <script type="module" src="./node_modules/face-api.js/dist/face-api.js"></script>
+    </head>
+    <style>
+        #webcam {
+            position: relative;
+        }
+
+        #extracted {
+            vertical-align: top;
+            display: inline-block;
+            position: relative;
+        }
+
+        #extracted-label {
+            display: block;
+        }
+
+        #canvas {
+            position: relative;
+        }
+
+        #result {
+            position: relative;
+            left: 0;
+        }
+
+        #matches {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .match-container {
+            flex: 0 0 calc(20% - 16px); 
+            text-align: center;
+            text-align: left;
+            margin-top: 8px;
+            margin-right: 8px;
+        }
+
+        .match-image {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <body>
+        <video id="webcam" width="640" height="360" autoplay></video>
+        <div id="extracted">
+            <span id="extracted-label"><b>Extracted Face</b></span>
+            <canvas id="canvas" width="120" height="120"></canvas>
+        </div>
+        <div id="result">
+            <span id="matches-label"><b>Top 5 Matches</b></span>
+            <div id="matches"></div> 
+        </div>
+        <script type="module" src="realtimeFaceRecognition.js"></script>
+    </body>
+</html>
